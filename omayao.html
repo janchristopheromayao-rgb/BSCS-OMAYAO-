@@ -3,18 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> MY PORTFOLIO </title>
+    <nav class="navbar">
+      <div class="brand"> MY PORTFOLIO </div>
+     <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links" id="navLinks">
+       <li><a href="#home">Home</a></li>
+       <li><a href="#about">About</a></li>
+       <li><a href="#services">Services</a></li>
+       <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <function
+    function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  navLinks.classList.toggle('show');
+    }>
+
     <style>
         header {
-           font-style: oblique; color :azure; 
+           font-style:initial; color :rgb(6, 150, 78); 
+           text-align:start;
         }
+        .navbar {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           background-color: green;
+           padding: 10px;
+           position: relative;
+        }
+
+        .brand {
+          color: #333;
+          font-size: 20px;
+          font-weight: bold;
+        }
+
+        .menu-icon {
+          display: none;
+          font-size: 24px;
+          color: #333;
+          cursor: pointer;
+        }
+        .nav-links {
+         list-style: none;
+         display: flex;
+         gap: 15px;
+        }
+
+        .nav-links li a {
+          color: #333;
+          text-decoration: none;
+          padding: 8px 12px;
+        }
+
+        .nav-links li a:hover {
+          background-color:green;
+          border-radius: 4px;
+        }
+        @media (max-width: 768px) {
+        .menu-icon {
+         display: block;
+         }
+        .nav-links {
+          display: none;
+          flex-direction: column;
+          position: absolute;
+          top: 50px;
+          right: 10px;
+          background-color: green;
+          padding: 10px;
+        }
+        .nav-links.show {
+          display: flex;
+        }
+}
+
         body 
              {
              text-align: center;
-             background-color: blue;
+             background-color:rgb(7, 241, 7);
 
         }
-        .colored-button { background-color:Green; color:white; padding 10px 10px; border: 2px solid;
+        .colored-button { background-color:Green; color:white; padding 10px;border: 2px solid;
                           border-radius: 5px; cursor:ponter; font-size: 14px;
                         }
         .bordered-button { padding:10px 10px; font-size: 14px; border: 2px solid; border-radius: 10px;
