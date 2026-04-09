@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <nav class="navbar">
       <div class="brand"> MY PORTFOLIO </div>
-     <div class="menu-icon" onclick="toggleMenu()">...</div>
+     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
       <ul class="nav-links" id="navLinks">
        <li><a href="#home">HOME</a></li>
        <li><a href="#quizes">QUIZES</a></li>
@@ -13,71 +13,67 @@
        <li><a href="#exam-result">EXAM</a></li>
       </ul>
     </nav>
-    <function
-    function toggleMenu() {
-  const navLinks = document.getElementById('navLinks');
-  navLinks.classList.toggle('show');
-    }>
-
     <style>
         header {
            font-style:initial; color :rgb(6, 150, 78); 
            text-align:start;
         }
-        .navbar {
-           display: flex;
-           justify-content: space-between;
-           align-items: center;
-           background-color: green;
-           padding: 10px;
-           position: relative;
-        }
+       .navbar {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       background-color: green;
+       padding: 10px 20px;
+       position: relative;
+              }
 
-        .brand {
-          color: white;
-          font-size: 20px;
-          font-weight: bold;
-        }
+       /* Logo style */
+      .logo {
+        color: #fff;
+        font-size: 20px;
+        font-weight: bold;
+            }
 
-        .menu-icon {
-          display: none;
-          font-size: 24px;
-          color: white;
-          cursor: pointer;
-        }
-        .nav-links {
-         list-style: none;
-         display: flex;
-         gap: 15px;
-        }
-
-        .nav-links li a {
-          color: white;
-          text-decoration: none;
-          padding: 8px 12px;
-        }
-
-        .nav-links li a:hover {
-          background-color:green;
-          border-radius: 4px;
-        }
-        @media (max-width: 768px) {
-        .menu-icon {
-         display: block;
-         }
-        .nav-links {
-          display: none;
-          flex-direction: column;
-          position: absolute;
-          top: 50px;
-          right: 10px;
-          background-color: green;
-          padding: 10px;
-        }
-        .nav-links.show {
-          display: flex;
-        }
+       /* Menu icon styles */
+      .menu-icon {
+        display: none;
+        font-size: 24px;
+        color:white;
+        cursor: pointer;
+                 }
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
 }
+
+.nav-links li a {
+  color:white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: green;
+    flex-direction: column;
+    width: 200px;
+    display: none; /* Hidden by default */
+  }
+
+  .nav-links.show {
+    display: flex; /* Show menu when toggled */
+  }
+}
+
 
         body 
              {
@@ -92,6 +88,16 @@
                            background-color:Green; cursor:pointer; transition: all 0.3s ease;
                         }
     </style>
+    <script>
+// Toggle menu on mobile
+const menuIcon = document.getElementById('menuIcon');
+const navLinks = document.getElementById('navLinks');
+
+menuIcon.addEventListener('click', () => {
+  navLinks.classList.toggle('show');
+});
+
+    </script>
 </head>
 <body>
     <div id="header">
